@@ -43,6 +43,7 @@ namespace lab1
             this.one_btn = new System.Windows.Forms.Button();
             this.output_field = new System.Windows.Forms.RichTextBox();
             this.base_label = new System.Windows.Forms.Label();
+            this.error_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // and_btn
@@ -189,9 +190,9 @@ namespace lab1
             // output_field
             // 
             this.output_field.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.output_field.Location = new System.Drawing.Point(37, 61);
+            this.output_field.Location = new System.Drawing.Point(37, 29);
             this.output_field.Name = "output_field";
-            this.output_field.Size = new System.Drawing.Size(454, 64);
+            this.output_field.Size = new System.Drawing.Size(454, 96);
             this.output_field.TabIndex = 2;
             this.output_field.Text = "";
             this.output_field.TextChanged += new System.EventHandler(this.output_field_TextChanged);
@@ -201,18 +202,34 @@ namespace lab1
             this.base_label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.base_label.AutoSize = true;
             this.base_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.base_label.Location = new System.Drawing.Point(33, 38);
+            this.base_label.Location = new System.Drawing.Point(33, 6);
             this.base_label.Name = "base_label";
             this.base_label.Size = new System.Drawing.Size(118, 20);
             this.base_label.TabIndex = 15;
             this.base_label.Text = "Current base: 2";
             this.base_label.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // error_label
+            // 
+            this.error_label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.error_label.AutoSize = true;
+            this.error_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.error_label.ForeColor = System.Drawing.Color.Red;
+            this.error_label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.error_label.Location = new System.Drawing.Point(379, 6);
+            this.error_label.Name = "error_label";
+            this.error_label.Size = new System.Drawing.Size(112, 20);
+            this.error_label.TabIndex = 15;
+            this.error_label.Text = "Invalid number";
+            this.error_label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.error_label.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 349);
+            this.Controls.Add(this.error_label);
             this.Controls.Add(this.base_label);
             this.Controls.Add(this.and_btn);
             this.Controls.Add(this.to2_btn);
@@ -251,6 +268,7 @@ namespace lab1
         private System.Windows.Forms.Button one_btn;
         private System.Windows.Forms.RichTextBox output_field;
         private System.Windows.Forms.Label base_label;
+        private System.Windows.Forms.Label error_label;
     }
 }
 

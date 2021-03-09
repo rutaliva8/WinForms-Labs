@@ -24,6 +24,8 @@ namespace lab1
         private delegate void ModeChange(BaseMode mode);
         private event ModeChange OnModeChange;
 
+        private bool isValidNumber = false;
+
         private BaseMode mode = BaseMode.BASE2;
         private BaseMode Mode {
             get
@@ -37,13 +39,28 @@ namespace lab1
             }
         }
 
+        private void CheckIsValid()
+        {
+            try
+            {
+                Convert.ToInt32(output_field.Text, (int)Mode);
+                isValidNumber = true;
+            }
+            catch
+            {
+                isValidNumber = false;
+            }
+            error_label.Visible = !isValidNumber;
+        }
+
         private void ChangeBase(string number, BaseMode toBase)
         {
-            if (String.IsNullOrEmpty(number) || mode == toBase)
+            if (String.IsNullOrEmpty(number) || mode == toBase || !isValidNumber)
                 return;
             output_field.Text = Convert.ToString(Convert.ToInt32(number, (int)Mode), (int)toBase);
             Mode = toBase;
         }
+
 
         public Form1()
         {
@@ -52,15 +69,11 @@ namespace lab1
             OnModeChange += (BaseMode mode) =>
             {
                 base_label.Text = $"Current base: {((int)mode).ToString()}";
+                CheckIsValid();
             };
         }
 
         //////////////////////////////////////////////////////////////////
-
-        private void output_field_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         private void one_btn_Click(object sender, EventArgs e)
         {
@@ -107,6 +120,16 @@ namespace lab1
                     Mode = BaseMode.BASE2;
                     break;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void output_field_TextChanged(object sender, EventArgs e)
+        {
+            CheckIsValid();
         }
     }
 }
