@@ -50,7 +50,10 @@ namespace lab1
             {
                 isValidNumber = false;
             }
-            error_label.Visible = !isValidNumber;
+            finally
+            {
+                error_label.Visible = !isValidNumber;
+            }
         }
 
         private void ChangeBase(string number, BaseMode toBase)
