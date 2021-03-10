@@ -18,8 +18,43 @@ namespace lab1
         BASE16 = 16,
     }
 
+    struct Operation
+    {
+        int num1;
+        int? num2;
+        char operation;
+        int result;
+        
+        Operation(int num1, int? num2, char operation)
+        {
+            this.num1 = num1;
+            this.num2 = num2;
+            this.operation = operation;
+
+            switch (this.operation)
+            {
+                case '&':
+                    result = num1 & (int)num2;
+                    break;
+                case '|':
+                    result = num1 | (int)num2;
+                    break;
+                case '^':
+                    result = num1 ^ (int)num2;
+                    break;
+                case '-':
+                    result = ~num1;
+                    break;
+                default:
+                    result = 0;
+                    break;
+            }
+        }
+    }
+
     public partial class Form1 : Form
     {
+        private delegate int CalculatorOperation(int num1, int num2);
 
         private delegate void ModeChange(BaseMode mode);
         private event ModeChange OnModeChange;
@@ -64,6 +99,21 @@ namespace lab1
             Mode = toBase;
         }
 
+        private List<string> ParceArgs()
+        {
+            var output = new List<string>();
+
+            string buffer = String.Empty;
+            foreach (char bit in output_field.Text)
+            {
+                if (!Char.IsDigit(bit))
+                {
+                    
+                }
+            }
+
+            return output;
+        }
 
         public Form1()
         {
@@ -132,6 +182,18 @@ namespace lab1
 
         private void output_field_TextChanged(object sender, EventArgs e)
         {
+            char[] validChars = { '&', '^', '|', '-' };
+            string valid = String.Empty;
+            foreach (char bit in output_field.Text)
+            {
+                if (Char.IsDigit(bit) || Array.IndexOf(validChars, bit) > -1)
+                {
+                    valid += bit;
+                }
+            }
+            output_field.Text = valid;
+
+
             CheckIsValid();
         }
 

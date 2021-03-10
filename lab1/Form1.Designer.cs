@@ -193,9 +193,11 @@ namespace lab1
             // 
             // output_field
             // 
+            this.output_field.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.output_field.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.output_field.Location = new System.Drawing.Point(37, 29);
             this.output_field.Name = "output_field";
+            this.output_field.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.output_field.Size = new System.Drawing.Size(454, 96);
             this.output_field.TabIndex = 2;
             this.output_field.Text = "";
@@ -249,7 +251,7 @@ namespace lab1
             this.Controls.Add(this.one_btn);
             this.Controls.Add(this.output_field);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Mega Ultra Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
