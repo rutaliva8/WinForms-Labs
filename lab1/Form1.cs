@@ -134,5 +134,92 @@ namespace lab1
         {
             CheckIsValid();
         }
+
+        private void and_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int num = Convert.ToInt32(Convert.ToInt32(output_field.Text, (int)Mode).ToString(), 10);
+                output_field.Text = (num & 1).ToString();
+                Mode = BaseMode.BASE2;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void or_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string num = Convert.ToString(Convert.ToInt32(output_field.Text, (int)Mode), 2);
+                Mode = BaseMode.BASE2;
+                foreach (char bit in num)
+                {
+                    if (bit == '1')
+                    {
+                        output_field.Text = "1";
+                        return;
+                    }
+                }
+                output_field.Text = "0";
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void xor_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string num = Convert.ToString(Convert.ToInt32(output_field.Text, (int)Mode), 2);
+                Mode = BaseMode.BASE2;
+                bool metBit = false;
+                
+                foreach (char bit in num)
+                {
+                    if (bit == '1')
+                    {
+                        if (metBit)
+                        {
+                            output_field.Text = "0";
+                            return;
+                        }
+                        metBit = true;
+                        output_field.Text = "1";
+                    }
+                }
+                if (!metBit)
+                    output_field.Text = "0";
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void not_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string num = Convert.ToString(Convert.ToInt32(output_field.Text, (int)Mode), 2);
+                string output = String.Empty;
+                Mode = BaseMode.BASE2;
+
+                foreach (char bit in num)
+                {
+                    output += (bit == '1') ? '0' : '1';
+                }
+
+                output_field.Text = output;
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

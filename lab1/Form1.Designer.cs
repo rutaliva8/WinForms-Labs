@@ -56,6 +56,7 @@ namespace lab1
             this.and_btn.TabIndex = 3;
             this.and_btn.Text = "AND";
             this.and_btn.UseVisualStyleBackColor = true;
+            this.and_btn.Click += new System.EventHandler(this.and_btn_Click);
             // 
             // to2_btn
             // 
@@ -79,6 +80,7 @@ namespace lab1
             this.or_btn.TabIndex = 5;
             this.or_btn.Text = "OR";
             this.or_btn.UseVisualStyleBackColor = true;
+            this.or_btn.Click += new System.EventHandler(this.or_btn_Click);
             // 
             // to10_btn
             // 
@@ -114,6 +116,7 @@ namespace lab1
             this.not_btn.TabIndex = 8;
             this.not_btn.Text = "NOT";
             this.not_btn.UseVisualStyleBackColor = true;
+            this.not_btn.Click += new System.EventHandler(this.not_btn_Click);
             // 
             // clear_btn
             // 
@@ -137,6 +140,7 @@ namespace lab1
             this.xor_btn.TabIndex = 10;
             this.xor_btn.Text = "XOR";
             this.xor_btn.UseVisualStyleBackColor = true;
+            this.xor_btn.Click += new System.EventHandler(this.xor_btn_Click);
             // 
             // to16_btn
             // 
