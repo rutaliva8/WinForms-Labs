@@ -233,16 +233,29 @@ namespace lab1Redux
             num2.Text = String.Empty;
             output_field.Text = String.Empty;
         }
+        
 
         private void not_btn_Click(object sender, EventArgs e)
         {
+            string not(string num)
+            {
+                string output = String.Empty;
+                foreach (char ch in num)
+                {
+                    output += (ch == '0' ? '1' : '0');
+                }
+                return output;
+            }
+
             try
             {
-                int val1 = Convert.ToInt32(ChangeBase(num1.Text, BaseMode.BASE10, 0));
-                int val2 = Convert.ToInt32(ChangeBase(num2.Text, BaseMode.BASE10, 1));
+                string val1 = not(ChangeBase(num1.Text, BaseMode.BASE2, 0));
+                string val2 = not(ChangeBase(num2.Text, BaseMode.BASE2, 1));
 
-                num1.Text = ConvertBase((~val1).ToString(), BaseMode.BASE10, Mode);
-                num2.Text = ConvertBase((~val2).ToString(), BaseMode.BASE10, Mode);
+                Mode = BaseMode.BASE2;
+
+                num1.Text = val1;
+                num2.Text = val2;
             }
             catch { };
         }
