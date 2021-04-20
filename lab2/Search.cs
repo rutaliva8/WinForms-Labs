@@ -23,16 +23,13 @@ namespace lab2
         List<Book> books;
         public static List<Book> searchResults;
 
-        public Search()
+        public Search(List<Book> books)
         {
-            books = Library.books;
-            foreach (Book book in books)
-            {
-                MessageBox.Show(book.ToString());
-                //dataGrid.Rows.Add(book.GetBookType(), book.name, book.ukd, book.pageCount, book.publisher, book.year.ToString(), book.uploadDate.ToString(), book.author.name, book.author.country, book.author.id);
-            }
+            this.books = books;
+
             InitializeComponent();
         }
+
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -41,9 +38,7 @@ namespace lab2
 
         private List<Book> DoSearch(SearchOptions mode, string text, bool easySearch, bool ignoreCase)
         {
-            return books;
-            List<Book> newBooks = new List<Book>();
-            newBooks.Add(new Book());
+            List<Book> newBooks = null;
             switch (mode)
             {
                 case (SearchOptions.Publisher):
@@ -95,15 +90,13 @@ namespace lab2
             SearchOptions searchOption = (SearchOptions)searchType.SelectedIndex;
             MessageBox.Show($"{searchOption} {searchType.SelectedIndex}");
 
-            searchResults = DoSearch(searchOption, searchText.Text, easySearch.Checked, caseCheckBox.Checked);
-            foreach (Book book in Search.searchResults)
+            List<Book> searchResults = DoSearch(searchOption, searchText.Text, easySearch.Checked, caseCheckBox.Checked);
+
+            if (searchResults != null)
             {
-                MessageBox.Show(book.ToString());
-                //dataGrid.Rows.Add(book.GetBookType(), book.name, book.ukd, book.pageCount, book.publisher, book.year.ToString(), book.uploadDate.ToString(), book.author.name, book.author.country, book.author.id);
+                SearchResult searchResult = new SearchResult(searchResults);
+                searchResult.Show();
             }
-            //MessageBox.Show(searchResults.ToString());
-            SearchResult searchResult = new SearchResult();
-            searchResult.Show();
         }
     }
 }

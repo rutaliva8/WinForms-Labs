@@ -75,6 +75,8 @@ namespace lab2
             this.sortByName = new System.Windows.Forms.ToolStripMenuItem();
             this.dateByName = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.bottomLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageCountBar)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -99,7 +101,6 @@ namespace lab2
             this.bigBookBtn.Name = "bigBookBtn";
             this.bigBookBtn.Size = new System.Drawing.Size(82, 21);
             this.bigBookBtn.TabIndex = 2;
-            this.bigBookBtn.TabStop = true;
             this.bigBookBtn.Text = "Крупная";
             this.bigBookBtn.UseVisualStyleBackColor = true;
             // 
@@ -111,13 +112,13 @@ namespace lab2
             this.mediumBookBtn.Name = "mediumBookBtn";
             this.mediumBookBtn.Size = new System.Drawing.Size(83, 21);
             this.mediumBookBtn.TabIndex = 2;
-            this.mediumBookBtn.TabStop = true;
             this.mediumBookBtn.Text = "Средняя";
             this.mediumBookBtn.UseVisualStyleBackColor = true;
             // 
             // smallBookBtn
             // 
             this.smallBookBtn.AutoSize = true;
+            this.smallBookBtn.Checked = true;
             this.smallBookBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.smallBookBtn.Location = new System.Drawing.Point(16, 106);
             this.smallBookBtn.Name = "smallBookBtn";
@@ -449,7 +450,8 @@ namespace lab2
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchBtn,
             this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1168, 25);
@@ -479,14 +481,14 @@ namespace lab2
             // sortByName
             // 
             this.sortByName.Name = "sortByName";
-            this.sortByName.Size = new System.Drawing.Size(180, 22);
+            this.sortByName.Size = new System.Drawing.Size(149, 22);
             this.sortByName.Text = "Названию";
             this.sortByName.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // dateByName
             // 
             this.dateByName.Name = "dateByName";
-            this.dateByName.Size = new System.Drawing.Size(180, 22);
+            this.dateByName.Size = new System.Drawing.Size(149, 22);
             this.dateByName.Text = "Дате загрузки";
             this.dateByName.Click += new System.EventHandler(this.dateByName_Click);
             // 
@@ -500,11 +502,31 @@ namespace lab2
             this.toolStripButton2.Text = "О программе";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(63, 22);
+            this.toolStripButton3.Text = "Очистить";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // bottomLabel
+            // 
+            this.bottomLabel.AutoSize = true;
+            this.bottomLabel.Location = new System.Drawing.Point(1, 786);
+            this.bottomLabel.Name = "bottomLabel";
+            this.bottomLabel.Size = new System.Drawing.Size(35, 13);
+            this.bottomLabel.TabIndex = 17;
+            this.bottomLabel.Text = "label2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 786);
+            this.ClientSize = new System.Drawing.Size(1168, 799);
+            this.Controls.Add(this.bottomLabel);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.authorCountryBox);
             this.Controls.Add(this.uploadDatePicker);
@@ -537,6 +559,7 @@ namespace lab2
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageCountBar)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -592,6 +615,8 @@ namespace lab2
         private System.Windows.Forms.ToolStripMenuItem sortByName;
         private System.Windows.Forms.ToolStripMenuItem dateByName;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.Label bottomLabel;
     }
 }
 

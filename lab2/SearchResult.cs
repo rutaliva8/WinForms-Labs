@@ -12,10 +12,10 @@ namespace lab2
 {
     public partial class SearchResult : Form
     {
-        public SearchResult()
+        public SearchResult(List<Book> searchResults)
         {
             InitializeComponent();
-            foreach (Book book in Search.searchResults)
+            foreach (Book book in searchResults)
             {
                 MessageBox.Show(book.ToString());
                 dataGrid.Rows.Add(book.GetBookType(), book.name, book.ukd, book.pageCount, book.publisher, book.year.ToString(), book.uploadDate.ToString(), book.author.name, book.author.country, book.author.id);

@@ -14,11 +14,18 @@ namespace lab2
 {
     public partial class Form1 : Form
     {
-        List<Book> books = Library.books;//new List<Book>();
+        List<Book> books = new List<Book>();
 
         public Form1()
         {
+            //UpdateLabel();
             InitializeComponent();
+        }
+
+
+        private void UpdateLabel()
+        {
+            bottomLabel.Text = $"Сейчас: {DateTime.Now.ToString("dd.mm.yyyy")}; Загружено: {books.Count}";
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -53,6 +60,7 @@ namespace lab2
             {
                 dataGrid.Rows.Add(book.GetBookType(), book.name, book.ukd, book.pageCount, book.publisher, book.year.ToString(), book.uploadDate.ToString(), book.author.name, book.author.country, book.author.id);
             }
+            UpdateLabel();
         }
 
         private string ValidateData()
@@ -191,7 +199,7 @@ namespace lab2
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Search search_form = new Search();
+            Search search_form = new Search(books);
             search_form.Show();
         }
 
@@ -222,6 +230,17 @@ namespace lab2
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Лабораторная работа №2-3 от Дежемесова Макара!!");
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            books = new List<Book>();
+            RebuildGrid();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            UpdateLabel();
         }
     }
 }

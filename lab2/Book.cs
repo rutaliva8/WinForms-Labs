@@ -38,9 +38,4 @@ namespace lab2
 
         public string GetBookType() => bookType == BookType.Big ? "Большая" : bookType == BookType.Medium ? "Средняя" : "Маленькая";
     }
-
-    public static class Library
-    {
-        public static List<Book> books = new List<Book>();
-    }
 }
