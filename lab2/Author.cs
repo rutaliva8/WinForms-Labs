@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lab2
 {
-    class Author
+    public class Author
     {
         public string name = "Unknown";
         public string country = "USSR";

@@ -29,6 +29,7 @@ namespace lab2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.bigBookBtn = new System.Windows.Forms.RadioButton();
             this.mediumBookBtn = new System.Windows.Forms.RadioButton();
@@ -68,15 +69,22 @@ namespace lab2
             this.uploadDatePicker = new System.Windows.Forms.DateTimePicker();
             this.addBtn = new System.Windows.Forms.Button();
             this.authorCountryBox = new System.Windows.Forms.ComboBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.searchBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.sortByName = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateByName = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageCountBar)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(12, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 24);
             this.label1.TabIndex = 1;
@@ -87,7 +95,7 @@ namespace lab2
             // 
             this.bigBookBtn.AutoSize = true;
             this.bigBookBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bigBookBtn.Location = new System.Drawing.Point(17, 40);
+            this.bigBookBtn.Location = new System.Drawing.Point(16, 52);
             this.bigBookBtn.Name = "bigBookBtn";
             this.bigBookBtn.Size = new System.Drawing.Size(82, 21);
             this.bigBookBtn.TabIndex = 2;
@@ -99,7 +107,7 @@ namespace lab2
             // 
             this.mediumBookBtn.AutoSize = true;
             this.mediumBookBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.mediumBookBtn.Location = new System.Drawing.Point(17, 67);
+            this.mediumBookBtn.Location = new System.Drawing.Point(16, 79);
             this.mediumBookBtn.Name = "mediumBookBtn";
             this.mediumBookBtn.Size = new System.Drawing.Size(83, 21);
             this.mediumBookBtn.TabIndex = 2;
@@ -111,7 +119,7 @@ namespace lab2
             // 
             this.smallBookBtn.AutoSize = true;
             this.smallBookBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.smallBookBtn.Location = new System.Drawing.Point(17, 94);
+            this.smallBookBtn.Location = new System.Drawing.Point(16, 106);
             this.smallBookBtn.Name = "smallBookBtn";
             this.smallBookBtn.Size = new System.Drawing.Size(69, 21);
             this.smallBookBtn.TabIndex = 2;
@@ -123,7 +131,7 @@ namespace lab2
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label3.Location = new System.Drawing.Point(13, 118);
+            this.label3.Location = new System.Drawing.Point(12, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 24);
             this.label3.TabIndex = 1;
@@ -132,7 +140,7 @@ namespace lab2
             // bookNameText
             // 
             this.bookNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bookNameText.Location = new System.Drawing.Point(17, 145);
+            this.bookNameText.Location = new System.Drawing.Point(16, 157);
             this.bookNameText.Name = "bookNameText";
             this.bookNameText.Size = new System.Drawing.Size(120, 23);
             this.bookNameText.TabIndex = 4;
@@ -141,7 +149,7 @@ namespace lab2
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label4.Location = new System.Drawing.Point(12, 171);
+            this.label4.Location = new System.Drawing.Point(11, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 24);
             this.label4.TabIndex = 1;
@@ -151,7 +159,7 @@ namespace lab2
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label5.Location = new System.Drawing.Point(13, 224);
+            this.label5.Location = new System.Drawing.Point(12, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(196, 24);
             this.label5.TabIndex = 1;
@@ -162,7 +170,7 @@ namespace lab2
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label6.Location = new System.Drawing.Point(12, 299);
+            this.label6.Location = new System.Drawing.Point(11, 311);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 24);
             this.label6.TabIndex = 1;
@@ -172,7 +180,7 @@ namespace lab2
             // publisherText
             // 
             this.publisherText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.publisherText.Location = new System.Drawing.Point(15, 326);
+            this.publisherText.Location = new System.Drawing.Point(14, 338);
             this.publisherText.Name = "publisherText";
             this.publisherText.Size = new System.Drawing.Size(121, 23);
             this.publisherText.TabIndex = 4;
@@ -181,7 +189,7 @@ namespace lab2
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label7.Location = new System.Drawing.Point(14, 352);
+            this.label7.Location = new System.Drawing.Point(13, 364);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(122, 24);
             this.label7.TabIndex = 1;
@@ -192,7 +200,7 @@ namespace lab2
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label8.Location = new System.Drawing.Point(11, 414);
+            this.label8.Location = new System.Drawing.Point(10, 426);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(128, 24);
             this.label8.TabIndex = 1;
@@ -203,7 +211,7 @@ namespace lab2
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.label9.Location = new System.Drawing.Point(7, 473);
+            this.label9.Location = new System.Drawing.Point(6, 485);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 46);
             this.label9.TabIndex = 1;
@@ -213,7 +221,7 @@ namespace lab2
             // authorNameText
             // 
             this.authorNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.authorNameText.Location = new System.Drawing.Point(18, 546);
+            this.authorNameText.Location = new System.Drawing.Point(17, 558);
             this.authorNameText.Name = "authorNameText";
             this.authorNameText.Size = new System.Drawing.Size(121, 23);
             this.authorNameText.TabIndex = 4;
@@ -223,7 +231,7 @@ namespace lab2
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label10.Location = new System.Drawing.Point(11, 519);
+            this.label10.Location = new System.Drawing.Point(10, 531);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 24);
             this.label10.TabIndex = 1;
@@ -234,7 +242,7 @@ namespace lab2
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label11.Location = new System.Drawing.Point(11, 572);
+            this.label11.Location = new System.Drawing.Point(10, 584);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 24);
             this.label11.TabIndex = 1;
@@ -245,7 +253,7 @@ namespace lab2
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label12.Location = new System.Drawing.Point(14, 630);
+            this.label12.Location = new System.Drawing.Point(13, 642);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(27, 24);
             this.label12.TabIndex = 1;
@@ -255,7 +263,7 @@ namespace lab2
             // authorIdText
             // 
             this.authorIdText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.authorIdText.Location = new System.Drawing.Point(17, 657);
+            this.authorIdText.Location = new System.Drawing.Point(16, 669);
             this.authorIdText.Name = "authorIdText";
             this.authorIdText.Size = new System.Drawing.Size(121, 23);
             this.authorIdText.TabIndex = 4;
@@ -275,7 +283,7 @@ namespace lab2
             this.authorName,
             this.authorCountry,
             this.authorID});
-            this.dataGrid.Location = new System.Drawing.Point(210, 13);
+            this.dataGrid.Location = new System.Drawing.Point(210, 25);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.Size = new System.Drawing.Size(946, 760);
             this.dataGrid.TabIndex = 9;
@@ -344,7 +352,7 @@ namespace lab2
             // ukdText
             // 
             this.ukdText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ukdText.Location = new System.Drawing.Point(16, 198);
+            this.ukdText.Location = new System.Drawing.Point(15, 210);
             this.ukdText.Name = "ukdText";
             this.ukdText.Size = new System.Drawing.Size(121, 23);
             this.ukdText.TabIndex = 4;
@@ -352,7 +360,7 @@ namespace lab2
             // pageCountBar
             // 
             this.pageCountBar.LargeChange = 1;
-            this.pageCountBar.Location = new System.Drawing.Point(17, 251);
+            this.pageCountBar.Location = new System.Drawing.Point(16, 263);
             this.pageCountBar.Maximum = 1000;
             this.pageCountBar.Name = "pageCountBar";
             this.pageCountBar.Size = new System.Drawing.Size(187, 45);
@@ -363,7 +371,7 @@ namespace lab2
             // 
             this.PagesCountLabel.AutoSize = true;
             this.PagesCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.PagesCountLabel.Location = new System.Drawing.Point(15, 283);
+            this.PagesCountLabel.Location = new System.Drawing.Point(14, 295);
             this.PagesCountLabel.Name = "PagesCountLabel";
             this.PagesCountLabel.Size = new System.Drawing.Size(13, 13);
             this.PagesCountLabel.TabIndex = 12;
@@ -371,7 +379,7 @@ namespace lab2
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(19, 724);
+            this.saveBtn.Location = new System.Drawing.Point(18, 736);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 13;
@@ -381,7 +389,7 @@ namespace lab2
             // 
             // LoadBtn
             // 
-            this.LoadBtn.Location = new System.Drawing.Point(100, 724);
+            this.LoadBtn.Location = new System.Drawing.Point(99, 736);
             this.LoadBtn.Name = "LoadBtn";
             this.LoadBtn.Size = new System.Drawing.Size(75, 23);
             this.LoadBtn.TabIndex = 13;
@@ -391,7 +399,7 @@ namespace lab2
             // 
             // removeBtn
             // 
-            this.removeBtn.Location = new System.Drawing.Point(100, 698);
+            this.removeBtn.Location = new System.Drawing.Point(99, 710);
             this.removeBtn.Name = "removeBtn";
             this.removeBtn.Size = new System.Drawing.Size(75, 23);
             this.removeBtn.TabIndex = 13;
@@ -401,21 +409,21 @@ namespace lab2
             // 
             // releaseDatePicker
             // 
-            this.releaseDatePicker.Location = new System.Drawing.Point(15, 379);
+            this.releaseDatePicker.Location = new System.Drawing.Point(14, 391);
             this.releaseDatePicker.Name = "releaseDatePicker";
             this.releaseDatePicker.Size = new System.Drawing.Size(189, 20);
             this.releaseDatePicker.TabIndex = 14;
             // 
             // uploadDatePicker
             // 
-            this.uploadDatePicker.Location = new System.Drawing.Point(15, 441);
+            this.uploadDatePicker.Location = new System.Drawing.Point(14, 453);
             this.uploadDatePicker.Name = "uploadDatePicker";
             this.uploadDatePicker.Size = new System.Drawing.Size(189, 20);
             this.uploadDatePicker.TabIndex = 14;
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(19, 698);
+            this.addBtn.Location = new System.Drawing.Point(18, 710);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(75, 23);
             this.addBtn.TabIndex = 13;
@@ -430,17 +438,74 @@ namespace lab2
             "Магадан",
             "Камбождо",
             "Деревня Горки"});
-            this.authorCountryBox.Location = new System.Drawing.Point(17, 599);
+            this.authorCountryBox.Location = new System.Drawing.Point(16, 611);
             this.authorCountryBox.Name = "authorCountryBox";
             this.authorCountryBox.Size = new System.Drawing.Size(121, 21);
             this.authorCountryBox.TabIndex = 15;
             this.authorCountryBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.searchBtn,
+            this.toolStripButton1,
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1168, 25);
+            this.toolStrip1.TabIndex = 16;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.searchBtn.Image = ((System.Drawing.Image)(resources.GetObject("searchBtn.Image")));
+            this.searchBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(46, 22);
+            this.searchBtn.Text = "Поиск";
+            this.searchBtn.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sortByName,
+            this.dateByName});
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(108, 22);
+            this.toolStripButton1.Text = "Сортировать по";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
+            // sortByName
+            // 
+            this.sortByName.Name = "sortByName";
+            this.sortByName.Size = new System.Drawing.Size(180, 22);
+            this.sortByName.Text = "Названию";
+            this.sortByName.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // dateByName
+            // 
+            this.dateByName.Name = "dateByName";
+            this.dateByName.Size = new System.Drawing.Size(180, 22);
+            this.dateByName.Text = "Дате загрузки";
+            this.dateByName.Click += new System.EventHandler(this.dateByName_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(86, 22);
+            this.toolStripButton2.Text = "О программе";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1168, 786);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.authorCountryBox);
             this.Controls.Add(this.uploadDatePicker);
             this.Controls.Add(this.releaseDatePicker);
@@ -474,6 +539,8 @@ namespace lab2
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageCountBar)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,6 +586,12 @@ namespace lab2
         private System.Windows.Forms.DateTimePicker uploadDatePicker;
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.ComboBox authorCountryBox;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton searchBtn;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton1;
+        private System.Windows.Forms.ToolStripMenuItem sortByName;
+        private System.Windows.Forms.ToolStripMenuItem dateByName;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }
 

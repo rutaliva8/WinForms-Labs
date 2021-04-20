@@ -14,7 +14,7 @@ namespace lab2
 {
     public partial class Form1 : Form
     {
-        static List<Book> books = new List<Book>();
+        List<Book> books = Library.books;//new List<Book>();
 
         public Form1()
         {
@@ -51,7 +51,7 @@ namespace lab2
             dataGrid.Rows.Clear();
             foreach (Book book in books)
             {
-                dataGrid.Rows.Add(book.GetBookType(), book.name, book.ukd, book.pageCount, book.publisher, book.year.ToString("dd-mm-yyyy"), book.uploadDate.ToString("dd-mm-yyyy"), book.author.name, book.author.country, book.author.id);
+                dataGrid.Rows.Add(book.GetBookType(), book.name, book.ukd, book.pageCount, book.publisher, book.year.ToString(), book.uploadDate.ToString(), book.author.name, book.author.country, book.author.id);
             }
         }
 
@@ -187,6 +187,41 @@ namespace lab2
                 books.RemoveAt(row.Index);
             }
             RebuildGrid();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Search search_form = new Search();
+            search_form.Show();
+        }
+
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SortBooks()
+        {
+            books.Sort();
+            RebuildGrid();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Book.sortMode = true;
+            SortBooks();
+        }
+
+        private void dateByName_Click(object sender, EventArgs e)
+        {
+            Book.sortMode = false;
+            SortBooks();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Лабораторная работа №2-3 от Дежемесова Макара!!");
         }
     }
 }
