@@ -108,26 +108,26 @@ namespace lab2
             book.year = releaseDatePicker.Value.Date;
             book.uploadDate = uploadDatePicker.Value.Date;
 
-            var author = new Author();
-            author.name = authorNameText.Text;
-            author.id = authorIdText.Text;
+            var authorName = authorNameText.Text;
+            var authorId = authorIdText.Text;
+            string authorCountry = String.Empty;
 
             switch (authorCountryBox.SelectedIndex)
             {
                 case (0):
-                    author.country = ((Belarus)(new BelarusBuilder()).CreateCountry()).GetName();
+                    authorCountry = ((Belarus)(new BelarusBuilder()).CreateCountry()).GetName();
                     break;
                 case (1):
-                    author.country = ((France)(new FranceBuilder()).CreateCountry()).GetName();
+                    authorCountry = ((France)(new FranceBuilder()).CreateCountry()).GetName();
                     break;
                 case (2):
-                    author.country = ((Germany)(new GermanyBuilder()).CreateCountry()).GetName();
+                    authorCountry = ((Germany)(new GermanyBuilder()).CreateCountry()).GetName();
                     break;
                 default:
                     break;
             }
 
-            book.author = author;
+            book.author = new AuthorBuilder().SetCountry(authorCountry).SetId(authorId).SetName(authorName).GetAuthor();
 
             books.Add(book);
             RebuildGrid(); // Мне мегалень делать ивенты, да и они не нужны нигде кроме обновы грида
