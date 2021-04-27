@@ -76,6 +76,7 @@ namespace lab2
             this.dateByName = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripButton();
             this.bottomLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageCountBar)).BeginInit();
@@ -434,11 +435,12 @@ namespace lab2
             // 
             // authorCountryBox
             // 
+            this.authorCountryBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.authorCountryBox.FormattingEnabled = true;
             this.authorCountryBox.Items.AddRange(new object[] {
-            "Магадан",
-            "Камбождо",
-            "Деревня Горки"});
+            "Беларусь",
+            "Франция",
+            "Германия"});
             this.authorCountryBox.Location = new System.Drawing.Point(16, 611);
             this.authorCountryBox.Name = "authorCountryBox";
             this.authorCountryBox.Size = new System.Drawing.Size(121, 21);
@@ -451,7 +453,8 @@ namespace lab2
             this.searchBtn,
             this.toolStripButton1,
             this.toolStripButton2,
-            this.toolStripButton3});
+            this.toolStripButton3,
+            this.toolStripTextBox1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1168, 25);
@@ -511,6 +514,16 @@ namespace lab2
             this.toolStripButton3.Size = new System.Drawing.Size(63, 22);
             this.toolStripButton3.Text = "Очистить";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripTextBox1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripTextBox1.Image")));
+            this.toolStripTextBox1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(71, 22);
+            this.toolStripTextBox1.Text = "Настройки";
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
             // bottomLabel
             // 
@@ -617,6 +630,7 @@ namespace lab2
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.Label bottomLabel;
+        private System.Windows.Forms.ToolStripButton toolStripTextBox1;
     }
 }
 

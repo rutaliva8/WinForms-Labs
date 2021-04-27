@@ -110,8 +110,22 @@ namespace lab2
 
             var author = new Author();
             author.name = authorNameText.Text;
-            author.country = authorCountryBox.Text;
             author.id = authorIdText.Text;
+
+            switch (authorCountryBox.SelectedIndex)
+            {
+                case (0):
+                    author.country = ((Belarus)(new BelarusBuilder()).CreateCountry()).GetName();
+                    break;
+                case (1):
+                    author.country = ((France)(new FranceBuilder()).CreateCountry()).GetName();
+                    break;
+                case (2):
+                    author.country = ((Germany)(new GermanyBuilder()).CreateCountry()).GetName();
+                    break;
+                default:
+                    break;
+            }
 
             book.author = author;
 
@@ -192,7 +206,11 @@ namespace lab2
             foreach (DataGridViewRow row in dataGrid.SelectedRows)
             {
                 //dataGrid.Rows.RemoveAt(row.Index);
-                books.RemoveAt(row.Index);
+                try
+                {
+                    books.RemoveAt(row.Index);
+                }
+                catch { };
             }
             RebuildGrid();
         }
@@ -241,6 +259,13 @@ namespace lab2
         private void Form1_Load(object sender, EventArgs e)
         {
             UpdateLabel();
+        }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+
+            var search_form = new SettingsForm();
+            search_form.Show();
         }
     }
 }

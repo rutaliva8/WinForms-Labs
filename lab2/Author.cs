@@ -9,7 +9,7 @@ namespace lab2
     public class Author
     {
         public string name = "Unknown";
-        public string country = "USSR";
+        public string country;
         public string id = "ERR";
     }
 }
