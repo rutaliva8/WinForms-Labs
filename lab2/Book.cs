@@ -37,5 +37,25 @@ namespace lab2
         }
 
         public string GetBookType() => bookType == BookType.Big ? "Большая" : bookType == BookType.Medium ? "Средняя" : "Маленькая";
+
+        public Book() { }
+        public Book(Book other)
+        {
+            bookType = other.bookType;
+            name = other.name;
+            ukd = other.name;
+            pageCount = other.pageCount;
+            publisher = other.publisher;
+            year = other.year;
+            uploadDate = other.uploadDate;
+            author = other.author;
+    }
+    }
+
+    public class BookPrototype : Book
+    {
+        public BookPrototype(Book other) : base(other) { }
+        public BookPrototype() : base() { }
+        public BookPrototype Clone(Book other) => new BookPrototype(other);
     }
 }

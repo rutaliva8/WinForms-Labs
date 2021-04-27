@@ -87,18 +87,6 @@ namespace lab2
 
         private void AddCurrentRecord()
         {
-            /*
-            public BookType bookType;
-            public int size = 0;
-            public string name = "Unknown";
-            public string ukd = "";
-            public int pageCount = 0;
-            public string publisher = "Unknown";
-            public DateTime year;
-            public DateTime uploadDate;
-            public List<Author> authors;
-             */
-
             var book = new Book();
             book.bookType = smallBookBtn.Checked ? BookType.Small : mediumBookBtn.Checked ? BookType.Medium : BookType.Big;
             book.pageCount = pageCountBar.Value;
@@ -155,6 +143,21 @@ namespace lab2
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void copyBtn_Click(object sender, EventArgs e)
+        {
+            
+            foreach (DataGridViewRow row in dataGrid.SelectedRows)
+            {
+                try
+                {
+                    var proto = new BookPrototype().Clone(books[row.Index]);
+                    books.Add((Book)proto);
+                }
+                catch { };
+            }
+            RebuildGrid();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

@@ -78,6 +78,7 @@ namespace lab2
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripButton();
             this.bottomLabel = new System.Windows.Forms.Label();
+            this.copyBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageCountBar)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -381,7 +382,7 @@ namespace lab2
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(18, 736);
+            this.saveBtn.Location = new System.Drawing.Point(60, 762);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 13;
@@ -534,6 +535,16 @@ namespace lab2
             this.bottomLabel.TabIndex = 17;
             this.bottomLabel.Text = "label2";
             // 
+            // copyBtn
+            // 
+            this.copyBtn.Location = new System.Drawing.Point(18, 736);
+            this.copyBtn.Name = "copyBtn";
+            this.copyBtn.Size = new System.Drawing.Size(75, 23);
+            this.copyBtn.TabIndex = 13;
+            this.copyBtn.Text = "Копировать";
+            this.copyBtn.UseVisualStyleBackColor = true;
+            this.copyBtn.Click += new System.EventHandler(this.copyBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -547,6 +558,7 @@ namespace lab2
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.LoadBtn);
+            this.Controls.Add(this.copyBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.PagesCountLabel);
             this.Controls.Add(this.pageCountBar);
@@ -631,6 +643,7 @@ namespace lab2
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.Label bottomLabel;
         private System.Windows.Forms.ToolStripButton toolStripTextBox1;
+        private System.Windows.Forms.Button copyBtn;
     }
 }
 
